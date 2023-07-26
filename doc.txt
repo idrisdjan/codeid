@@ -1,0 +1,33 @@
+django 
+
+pip install django  4.2.1
+
+# https://django-crispy-forms.readthedocs.io/en/latest/install.html
+
+pip install django-crispy-forms  2.0
+
+# https://github.com/unlt/django-cleanup
+
+pip install django-cleanup  8.0.0
+
+pip install pillow  9.5.0
+
+# https://pupi.org/project/django-ckeditor/
+
+pip install django-ckeditor  6.6.1
+
+# https://channels.readthedocs.io/en/stable/installation.html
+
+python -m pip install -U channels  4.0.0
+
+# https://django-allauth.readthedocs.io/en/latest/installation.html
+
+pip install django-allauth 0.54.0
+
+# https://pupi.org/project/python-dotenv/
+
+pip install python-dotenv  1.0.0
+
+# https://django-braces/readthedocs.io/en/latest/
+
+pip install django-braces  1.15.0
