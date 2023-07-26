@@ -34,4 +34,4 @@ pip install django-braces  1.15.0
 
 # https://www.mkdocs.org/
 
-pip install mkdocs
+pip install mkdocs 1.4.3
