@@ -1,0 +1,46 @@
+site_name: Blog
+
+#docs_dir: '/home/agate/GDprojects/godot/wiki/1_startGodot/startgodot/docs'
+
+site_dir: 'wiki/GENERIC/generic/build'
+
+#site_url: https://examle.com/
+nav:
+
+  - index: index.md
+  - Dev: dev.md
+  - settings: settings.md
+  - News: news/models.md
+
+#theme: reagthedocs
+theme:
+  name: material
+
+dev_addr:
+  127.0.0.1:8200
+
+#markdown_extensions:
+  #- toc:
+    #permalink: True
+
+markdown_extensions:
+
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.snippets
+  - toc:
+    permalink: True
+
+# сворачивание страниц
+collapse_single_pages: True
+
+plugins:
+  - search
+  - awesome-pages
+
+site-author:
+  Идрис Малов
+
+#pip
+#pip install mkdocs-awesome-pages-plugin
