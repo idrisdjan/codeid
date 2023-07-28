@@ -1,12 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstsrap/4.5.2/css/bootstsrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
 </head>
 <body>
-    {% block content %}
-    {% endblock %}
+    <aside>
+        <img src="{% static 'main/img/logo.png' %}" alt="Лого">
+    </aside>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
 </body>
 </html>
