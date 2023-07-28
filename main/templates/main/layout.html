@@ -14,8 +14,8 @@
         <img src="{% static 'main/img/logo.png' %}" alt="Лого">
         <span class="logo">Blog</span>
         <ul>
-            <a href="/"><li><i class="fas fa-home"></i> Главная</li></a>
-            <a href="/about"><li><i class="fas fa-address-card"></i> Про нас</li></a>
+            <a href="{% url 'home' %}"><li><i class="fas fa-home"></i> Главная</li></a>
+            <a href="{% url 'about' %}"><li><i class="fas fa-address-card"></i> Про нас</li></a>
             <a href=""><li><i class="fas fa-paper-plane"></i> Контакты</li></a>
         </ul>
     </aside>
