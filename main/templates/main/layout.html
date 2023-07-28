@@ -6,11 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstsrap/4.5.2/css/bootstsrap.min.css">
-    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 </head>
 <body>
     <aside>
         <img src="{% static 'main/img/logo.png' %}" alt="Лого">
+        <span class="logo">Blog</span>
+        <ul>
+            <a href="/"><li><i class="fas fa-home"></i> Главная</li></a>
+            <a href="/about"><li><i class="fas fa-address-card"></i> Про нас</li></a>
+            <a href=""><li><i class="fas fa-paper-plane"></i> Контакты</li></a>
+        </ul>
     </aside>
     <main>
         {% block content %}
