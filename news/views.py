@@ -1,11 +1,5 @@
 from django.shortcuts import render
 
 
-def index(request):
-    data = {
-        'title': 'Главная страница',
-    }
-    return render(request, 'main/index.html', data)
-
-def about(request):
-    return render(request, 'main/about.html')
+def news_home(request):
+    return render(request, 'news/news_home.html')
