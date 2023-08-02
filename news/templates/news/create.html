@@ -7,15 +7,11 @@
         <h1>Форма по добавлению статьи</h1>
         <form method="post">
             {% csrf_token %}
-            {{ form.title }}
-            {{ form.anons }}
-            {{ form.full_text }}
-            {{ form.date }}
-            <input type="text" placeholder="Название статьи" class="form-control"><br>
-            <input type="text" placeholder="Анонс статьи" class="form-control"><br>
-            <textarea class="form-control" placeholder="Текст статьи"></textarea><br>
-            <input type="date" class="form-control"><br>
-            <input type="time" class="form-control"><br>
+            {{ form.title }}<br>
+            {{ form.anons }}<br>
+            {{ form.full_text }}<br>
+            {{ form.date }}<br>
+            <span>{{ error }}</span>
             <button class="btn btn-success" type="submit">Добавить статью</button>
         </form>
     </div>
