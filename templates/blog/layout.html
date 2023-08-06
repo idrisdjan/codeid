@@ -1,10 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <aside>
+        <img src="{% static 'img/logo.jpg' %}" alt="Лого">
+        <span class="logo">Blog</span>
+        <h3>Меню</h3>
+        <ul>
+            <li><a href="/" class="fas fa-home">Главная</a></li>
+			<li><a href="/admin" class="fas fa-addres-card">Админ панель</a></li>
+			<li><a href="" class="fa-light fa-right-to-bracket">Войти</a><a href="">Регистрация</a></li>
+        </ul>
+    </aside>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>
+
 <!-- {% load static %}
 <!DOCTYPE>
 <html >
 <head>
 	<title>Новостной блог</title>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
+	<link rel="stylesheet" href="{% static 'css.style.css' %}">
 
 	<link rel="shortcut icon" href="css/images/favicon.ico" />
 

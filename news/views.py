@@ -7,7 +7,7 @@ class PostView(View):
     '''Вывод записи'''
     def get(self, request):
         posts = Post.objects.all()
-        return render(request, 'blog/blog.html', {'post_list': posts})
+        return render(request, 'blog/index.html', {'post_list': posts})
     
 class PostDetail(View):
     '''Отдельная страница записи'''
