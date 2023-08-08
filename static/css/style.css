@@ -1,3 +1,55 @@
 body {
-    background: #2c2c2c;
+    background: #181818;
 }
+
+aside {
+    float: left;
+    background: #2c2c2c;
+    width: 20%;
+    padding: 2.5%;
+    height: 100vh;
+    color: #fff;
+    border-right: 5px solid #4d4d4d;
+}
+
+aside img {
+    width: 80px;
+    float: left;
+}
+
+aside .logo {
+    font-size: 40px;
+    margin-left: 10px;
+    font-weight: bold;
+    position: relative;
+    top: -5px;
+}
+aside h3 {
+    margin-top: 50px;
+    font-size: 28px;
+}
+
+aside ul {list-style: none;}
+aside ul li {
+    color: #fff;
+    display: block;
+    margin-top: 20 px;
+    transition: transform .4s ease;
+}
+
+aside ul li:hover, aside ul a:hover {
+    color: #eb5959;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+div .projects {
+    float: left;
+    color: #fff;
+    margin-top: 100px;
+    text-align: center;
+    width: 75%;
+}
+
+div .projects h4 {font-size: 30px;}
+div .projects p {max-width: 75%; margin: 20px auto;}

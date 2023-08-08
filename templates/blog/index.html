@@ -3,6 +3,25 @@
 {% block title %}Главная страница{% endblock %}
 
 {% block content %}
-    <h1>Главная страница</h1>
-    <p>Главная страница</p>
+    <div class="features">
+        <div id="content" class="left">
+            <div class="projects">
+                <h3>Записи</h3>
+                {% for post in post_list %}
+                <div class="item">
+                    <div class="image left">
+                        <a href="#"><img src="{{ post.img.url }}" width="200px"/></a>
+                    </div>
+                    <div class="text left">
+                        <h4><a href="{{ post.id }}">{{ post.title }}</a></h4>
+                        <p>{{ post.description }}</p>
+                        <p>Автор: {{ post.author }} </p>
+                    </div>
+                    <div class="cl">&nbsp;</div>
+                </div>
+                {% endfor %}					
+            </div>
+        </div>
+        
+        <div class="cl">&nbsp;</div>
 {% endblock %}
