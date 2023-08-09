@@ -1,15 +1,16 @@
 body {
-    background: #181818;
+    background: #555555;
 }
 
 aside {
     float: left;
-    background: #2c2c2c;
-    width: 20%;
+    background: #212020;
+    width: 15%;
     padding: 2.5%;
     height: 100vh;
     color: #fff;
     border-right: 5px solid #4d4d4d;
+    position: fixed;
 }
 
 aside img {
@@ -46,10 +47,71 @@ aside ul li:hover, aside ul a:hover {
 div .projects {
     float: left;
     color: #fff;
+    display: block;
     margin-top: 100px;
+    margin-left: 300px;
     text-align: center;
     width: 75%;
+    position: right;
 }
 
-div .projects h4 {font-size: 30px;}
+div .projects h4 {
+    font-size: 20px;
+}
+div .records h4 {
+    color: #fff;
+    display: block;
+    margin-top: 20 px;
+    transition: transform .4s ease;
+}
+
+div .records h4:hover {
+    color: #da5959;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
 div .projects p {max-width: 75%; margin: 20px auto;}
+
+.form-comment {
+    font-size: 14px;
+    margin-left: 350px;
+}
+
+.form-comment label {
+    margin: 10px 10px;
+}
+
+.form-comment input {
+    border-radius: 7px;
+    padding: 10px;
+    height: 25px;
+    width: 150px;
+}
+
+.form-comment textarea {
+    border-radius: 7px;
+    padding: 10px;
+    height: 100px;
+    width: 100%;
+    resize: vertical;
+}
+
+.form-comment div {
+    margin: 10px;
+}
+
+.view-comment {
+    padding: 10px;
+    margin: 10px 350px;
+    font-size: 14px;
+    border-radius: 15px;
+}
+
+.likes {
+    margin: 0 350px;
+}
+
+div .footer {
+    text-align: right;
+}
