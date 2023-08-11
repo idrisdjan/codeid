@@ -6,7 +6,7 @@ aside {
     float: left;
     background: #212020;
     width: 15%;
-    padding: 2.5%;
+    padding: 2.0%;
     height: 100vh;
     color: #fff;
     border-right: 5px solid #4d4d4d;
@@ -26,19 +26,19 @@ aside .logo {
     top: -5px;
 }
 aside h3 {
-    margin-top: 50px;
+    margin-top: 10px;
     font-size: 28px;
 }
 
 aside ul {list-style: none;}
-aside ul li {
+aside ul li, .records h4 {
     color: #fff;
     display: block;
-    margin-top: 20 px;
+    margin-top: 10 px;
     transition: transform .4s ease;
 }
 
-aside ul li:hover, aside ul a:hover {
+aside ul li:hover, aside ul a:hover, .records h4:hover {
     color: #eb5959;
     text-decoration: none;
     transform: scale(1.05);
@@ -48,7 +48,7 @@ div .projects {
     float: left;
     color: #fff;
     display: block;
-    margin-top: 100px;
+    margin-top: 0px;
     margin-left: 300px;
     text-align: center;
     width: 75%;
@@ -57,18 +57,6 @@ div .projects {
 
 div .projects h4 {
     font-size: 20px;
-}
-div .records h4 {
-    color: #fff;
-    display: block;
-    margin-top: 20 px;
-    transition: transform .4s ease;
-}
-
-div .records h4:hover {
-    color: #da5959;
-    text-decoration: none;
-    transform: scale(1.05);
 }
 
 div .projects p {max-width: 75%; margin: 20px auto;}

@@ -6,4 +6,12 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('news.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]  
+
+if settings.DEBUG:
+    # add multiple paths using 'extend()'
+    urlpatterns.extend(static("static/", document_root="static"))
+    urlpatterns.extend(static("media/", document_root="media"))
+
+    # add a single path using 'append()'
+    # urlpatterns.append(path("__debug__/", include(debug_toolbar.urls)))
