@@ -1,10 +1,19 @@
+<<<<<<< HEAD
+=======
+#!/usr/bin/env python
+"""Django's command-line utility for administrative tasks."""
+>>>>>>> 0bf3e93 (start)
 import os
 import sys
 
 
 def main():
     """Run administrative tasks."""
+<<<<<<< HEAD
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'blog.settings')
+=======
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
+>>>>>>> 0bf3e93 (start)
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
