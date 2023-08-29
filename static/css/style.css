@@ -1,4 +1,5 @@
 body {
+    display: flex;
     background: #6e6e6e;
 }
 
@@ -14,6 +15,12 @@ body {
     align-items: center;
     z-index: 100;
 }
+
+.logo {
+    font-size: 14px;
+    color: #000000;
+}
+
 
 .navbar a {
     position: relative;
@@ -70,7 +77,7 @@ body {
 
 .aside {
     float: left;
-    margin: 20px 0 0 0;
+    margin: 50px 0 0 0;
     width: 10%;
     padding: 1%;
     height: 100vh;
@@ -78,7 +85,7 @@ body {
 
 .aside a {
     color: #000000;
-    /* display: absolute; */
+    display: absolute;
     font-size: 14px;
     transition: transform .4s ease;
 }
@@ -90,13 +97,38 @@ body {
 }
 
 .features {
-    margin: 25px;
+    margin: 50px;
 }
 
 .projects {
-    width: 300px;
-    height: 550px;
-    position: block;
-    margin: 20px;
-    display: table;
+    margin: 25px;
+}
+
+.content {
+    margin: 10px;
+    position: relative;
+    float: none;
+}
+
+.image-left {
+    position: absolute;
+}
+
+.image-left a {
+    width: 400px;
+}
+
+.footer {
+    margin: 0 10px 10px 0;
+    width: 100%;
+    background: #2b2b2b;
+    color: #6e6e6e;
+    height: 30px;
+    justify-content: right;
+    align-items: center;
+    text-align: right;
+}
+
+.footer p {
+    margin: 0 10px 0 0;
 }

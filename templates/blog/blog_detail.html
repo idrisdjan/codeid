@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE>
 <html >
 <head>
@@ -10,16 +11,12 @@
 
 </head>
 <body>
-    <aside>
-        <img src="{% static 'img/logo.jpg' %}" alt="Лого">
-        <span class="logo">Blog</span>
-        <h3>Меню</h3>
-        <ul>
-            <li><a href="{% url 'home' %}" class="fas fa-home">Главная</a></li>
-			<li><a href="/admin" class="fas fa-address-card">Админ панель</a></li>
-			<li><a href="" class="fa-light fa-right-to-bracket">Войти</a> | <a href="">Регистрация</a></li>
-        </ul>
-    </aside>
+    {% block header %}
+    {% endblock %}
+
+    {% block aside %}
+    {% endblock %}
+    
     <div class="shell">
         <div class="border">
 

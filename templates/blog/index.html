@@ -2,14 +2,42 @@
 
 {% block title %}Главная страница{% endblock %}
 
+{% block header %}
+    <header class="header">
+        <h2 class="logo"><a href="{% url 'home' %}">Pydris.ru</a></h2>
+        <nav class="navbar">
+            <!-- <a href="{% url 'home' %}" class="fas fa-home">Главная</a> -->
+            <a href="/admin" class="fas fa-address-card">Админ панель</a>
+            <a href="/about" class="fas fa-address-card">Про нас</a>
+            <button class="btnLogin-popup">Войти</button>
+        </nav>
+    
+        <form action="#" class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button type="submit"><i class='bx bx-search-alt-2'></i></button>
+        </form>
+    </header>
+{% endblock %}
+
+{% block aside %}
+    <aside class="aside">
+        <a href="#">Новости</a><br>
+        <a href="#">It-индустрия</a><br>
+        <a href="#">Игры</a><br>
+        <a href="#">Программы</a><br>
+        <a href="#">Языки программирования</a><br>
+        <a href="#">Информационная безопастность</a><br>
+        <a href="#">Операционные ситемы</a><br>
+    </aside>
+{% endblock %}
+
 {% block content %}
     <div class="features">
         <div id="content" class="left">
             <div class="projects">
-                <h3>Записи</h3>
                 {% for post in post_list %}
                 <div class="item">
-                    <div class="image left">
+                    <div class="image-left">
                         <a href="#"><img src="{{ post.img.url }}" width="200px"/></a>
                     </div>
                     <div class="records">
@@ -24,7 +52,10 @@
         </div>
         
         <div class="cl">&nbsp;</div>
-        <div class="footer" >
-            <p class="copy right">Copyright &copy;  2023 </p>
-        </div>
+{% endblock %}
+
+{% block footer %}
+    <!-- <div class="footer">
+        <p class="copy right">&copy;  2023</p>
+    </div> -->
 {% endblock %}
