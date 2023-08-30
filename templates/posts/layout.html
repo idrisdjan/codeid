@@ -16,6 +16,73 @@
         {% endblock header %}
     </main>
 
+    <!-- <div class="wrapper">
+        <span class="icon-close">
+            <ion-icon name="close"></ion-icon>
+        </span>
+        <div class="form-box login">
+            <h2>Вход</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail" required></ion-icon>
+                    </span>
+                    <input type="email" required>
+                    <label>Email или Логин</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label>Пароль</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> Запомнить меня</label>
+                    <a href="#">Забыли пароль?</a>
+                </div>
+                <button type="submit" class="btn">Войти</button>
+                <div class="login-register">
+                    <p>Нет аккаунта? <a href="#" class="register-link">Регистрация</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box register">
+            <h2>Регистрация</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person"></ion-icon>
+                    </span>
+                    <input type="text" required>
+                    <label>Имя пользователя</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail" required></ion-icon>
+                    </span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label>Пароль</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> Я принимаю Соглашение & Условия пользования</label>
+                </div>
+                <button type="submit" class="btn">Регистрация</button>
+                <div class="login-register">
+                    <p>Уже есть аккаунт? <a href="#" class="login-link">Войти</a></p>
+                </div>
+            </form>
+        </div>
+    </div> -->
+
     <main class="menu">
         {% block menu %}
         {% endblock menu %}
@@ -30,5 +97,9 @@
         {% block footer %}
         {% endblock footer %}
     </main>
+
+    <script src="/static/js/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
