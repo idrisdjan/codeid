@@ -8,20 +8,39 @@
   <title>Codeid.ru</title>
 </head>
 <body>
+  <!-- Шапка сайта -->
   <div class="header">
     <div class="navbar">
       <div class="logo">
-        <img src="{% static 'img/logo1.png' %}" alt="logo">
+        <a href="/"><img src="{% static 'img/logo1.png' %}" alt="logo"></a>
       </div>
-      <div>
-        <a href="/">Главная</a>
+      <div class="menu">
+        <div>
+          <a href="/">Главная</a>
+        </div>
+        <div>
+          <a href="#">Про нас</a>
+        </div>
+        <a href="#"><button>Войти</button></a>
       </div>
-      <a href=""></a>
     </div>
   </div>
-  {% for post in post_list %}
-    <h3>{{ post.title }}</h3>
-    <p>{{ post.description }}</p>
-  {% endfor %}
+  <!-- Вывод записей -->
+  <div id="main">
+    <div class="content">
+      <div class="posts">
+        <h3>Актуальные новости</h3>
+        {% for post in post_list %}
+          <div class="item">
+            <div class="image">
+              <a href="#"><img src="{{ post.img.url }}" width="200" /></a>
+            </div>
+            <h4>{{ post.title }}</h4>
+            <p>{{ post.description }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </body>
 </html>

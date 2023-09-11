@@ -11,3 +11,4 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns.extend(static("static/", document_root="static"))
     urlpatterns.extend(static("media/", document_root="media"))
+    # urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
