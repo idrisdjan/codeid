@@ -9,22 +9,14 @@
 </head>
 <body>
   <!-- Шапка сайта -->
-  <div class="header">
-    <div class="navbar">
-      <div class="logo">
-        <a href="/"><img src="{% static 'img/logo1.png' %}" alt="logo"></a>
-      </div>
-      <div class="menu">
-        <div>
-          <a href="/">Главная</a>
-        </div>
-        <div>
-          <a href="#">Про нас</a>
-        </div>
-        <a href="#"><button>Войти</button></a>
-      </div>
-    </div>
-  </div>
+  <header>
+    <a href="/"><img src="{% static 'img/logo1.png' %}" alt="logo"></a>
+    <nav class='nav'>
+      <a href='/' class='item active'>Главная</a>
+      <a href='#' class='item'>Про нас</a>
+    </nav>
+    <a href="#"><button class='btn'>Войти</button></a>
+  </header>
   <!-- Вывод записей -->
   <div id="main">
     <div class="content">
