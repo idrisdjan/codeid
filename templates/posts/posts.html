@@ -28,7 +28,7 @@
               <a href="#"><img src="{{ post.img.url }}" width="200" /></a>
             </div>
             <h4>{{ post.title }}</h4>
-            <p>{{ post.description }}</p>
+            <p>{{ post.description|truncatewords:30|linebreaks }}</p>
           </div>
         {% endfor %}
       </div>
