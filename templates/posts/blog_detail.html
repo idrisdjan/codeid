@@ -21,16 +21,16 @@
   <div id="main">
     <div class="content">
       <div class="posts">
-        <h3>{{ post.title }}</h3>
-        <p align="center">
-          <img src="{{ post.img.url }}" width="50%" />
-        </p>
+        <div class="imgblock">
+          <img src="{{ post.img.url }}" width="100%">
+          <span class="ttl">
+            <h3><a href="/">Новости</a></h3><br>
+            <h4>{{ post.title }}</h4>
+            <p>{{ post.author }} {{ post.date }}</p>
+          </span>
+        </div>
         <div class="post">
           <p>{{ post.description }}</p>
-        </div><br>
-        <div class="aut">
-          <p>{{ post.author }}</p>
-          <p>{{ post.date }}</p>
         </div>
       </div>
     </div>

@@ -1,11 +1,16 @@
 from django.db import models
+from django.utils import timezone
 
 class Post(models.Model):
     '''Данные о посте'''
     title = models.CharField('Заголовок записи', max_length=100)
+    slug = models.SlugField(max_length=250,
+                            unique_for_date='publish')
     description = models.TextField('Текст записи')
     author = models.CharField('Имя автора', max_length=100)
-    date = models.DateField('Дата публикации')
+    publish = models.DateTimeField(default=timezone.now)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
     img = models.ImageField('Изображение', upload_to='image/%Y')
 
     def __str__(self):
