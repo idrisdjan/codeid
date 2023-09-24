@@ -70,3 +70,8 @@ a {
   background-color: #9e9e9e;
   color: black;
 }
+
+.aut {
+  text-align: center;
+  justify-content: space-between;
+}
