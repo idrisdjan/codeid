@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,29 +9,55 @@
 </head>
 <body>
   <!-- Шапка сайта -->
-  <header>
-    <a href="/"><img src="{% static 'img/logo1.png' %}" alt="logo"></a>
-    <nav class='nav'>
-      <a href='/' class='item active'>Главная</a>
-      <a href='#' class='item'>Про нас</a>
-    </nav>
-    <a href="#"><button class='btn'>Войти</button></a>
+  <header class="header">
+    <div class="container">
+      <nav class='nav'>
+        <div class="logo">
+          <a href="/"><img class="logo" src="{% static 'img/logo1.png' %}" alt="logo"></a>
+        </div>
+        <ul class="menu">
+          <ul class="menu">
+            <li class="menu-item">
+              <a href='/' class='item active'>Главная</a>
+            </li>
+            <li class="menu-item">
+              <a href='#' class='item'>Про нас</a>
+            </li>
+          </ul>
+          <a href="#"><button class='btn'>Войти</button></a>
+        </ul>
+      </nav>
+    </div>
   </header>
+  <!-- Боковое меню -->
+  <div id="tags">
+    <h1>Навигация</h1>
+    <ul class="list">
+      <li class="list-item">
+        <a href="#">News</a>
+      </li>
+      <li class="list-item">
+        <a href="#">Author</a>
+      </li>
+      <li class="list-item">
+        <a href="#">Post</a>
+      </li>
+    </ul>
+  </div>
   <!-- Вывод записей -->
   <div id="main">
-    <div class="content">
-      <div class="posts">
-        <h3>Актуальные новости</h3>
-        {% for post in post_list %}
-          <div class="item">
-            <div class="image">
-              <a href="{{ post.id }}"><img src="{{ post.img.url }}" width="200" /></a>
-            </div>
-            <h4><a href="{{ post.id }}">{{ post.title }}</a></h4>
-            <p>{{ post.description|truncatewords:30|linebreaks }}</p>
+    <div class="posts">
+      <h3>Актуальные новости</h3>
+      {% for post in post_list %}
+        <div class="item-post">
+          <p class="author">{{ post.author }}{{ post.date }}</p>
+          <h4><a href="{{ post.id }}">{{ post.title }}</a></h4>
+          <div class="image">
+            <a href="{{ post.id }}"><img class="prev" src="{{ post.img.url }}" width="700" /></a>
           </div>
-        {% endfor %}
-      </div>
+          <p>{{ post.description|truncatewords:50|linebreaks }}</p>
+        </div>
+      {% endfor %}
     </div>
   </div>
 </body>

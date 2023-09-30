@@ -1,7 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.views.generic.base import View
-from .models import Post, Likes
-from .form import CommentsForm
+from .models import Post
 
 class PostView(View):
     '''Вывод записи'''

@@ -9,20 +9,49 @@
 </head>
 <body>
   <!-- Шапка сайта -->
-  <header>
-    <a href="/"><img src="{% static 'img/logo1.png' %}" alt="logo"></a>
-    <nav class='nav'>
-      <a href='/' class='item active'>Главная</a>
-      <a href='#' class='item'>Про нас</a>
-    </nav>
-    <a href="#"><button class='btn'>Войти</button></a>
+  <header class="header">
+    <div class="container">
+      <nav class='nav'>
+        <div class="logo">
+          <a href="/"><img class="logo" src="{% static 'img/logo1.png' %}" alt="logo"></a>
+        </div>
+        <ul class="menu">
+          <ul class="menu">
+            <li class="menu-item">
+              <a href='/' class='item active'>Главная</a>
+            </li>
+            <li class="menu-item">
+              <a href='#' class='item'>Про нас</a>
+            </li>
+          </ul>
+          <a href="#"><button class='btn'>Войти</button></a>
+        </ul>
+      </nav>
+    </div>
   </header>
+  <!-- Боковое меню
+  <div id="tags">
+    <h1>Навигация</h1>
+    <ul class="list">
+      <li class="list-item">
+        <a href="#">News</a>
+      </li>
+      <li class="list-item">
+        <a href="#">Author</a>
+      </li>
+      <li class="list-item">
+        <a href="#">Post</a>
+      </li>
+    </ul>
+  </div> -->
   <!-- Вывод записей -->
-  <div id="main">
+  <div id="post">
     <div class="content">
       <div class="posts">
         <div class="imgblock">
-          <img src="{{ post.img.url }}" width="100%">
+          <div class="photo">
+            <img src="{{ post.img.url }}" width="100%">
+          </div>
           <span class="ttl">
             <h3><a href="/">Новости</a></h3><br>
             <h4>{{ post.title }}</h4>
