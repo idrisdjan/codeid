@@ -166,3 +166,15 @@ span>h4 {
   align-items: center;
   justify-content: center;
 }
+
+.ttl h3{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ttl h4{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

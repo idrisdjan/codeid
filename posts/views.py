@@ -33,7 +33,7 @@ def get_client_ip(request):
 
 class UserPostListView(ListView):
     model = Post
-    template_name = 'blog/user_posts.html'
+    template_name = 'posts/user_posts.html'
     context_object_name = 'posts'
     paginate_by = 5
 

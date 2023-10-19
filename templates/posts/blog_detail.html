@@ -29,22 +29,9 @@
       </nav>
     </div>
   </header>
-  <!-- Боковое меню
-  <div id="tags">
-    <h1>Навигация</h1>
-    <ul class="list">
-      <li class="list-item">
-        <a href="#">News</a>
-      </li>
-      <li class="list-item">
-        <a href="#">Author</a>
-      </li>
-      <li class="list-item">
-        <a href="#">Post</a>
-      </li>
-    </ul>
-  </div> -->
+
   <!-- Вывод записей -->
+
   <div id="post">
     <div class="content">
       <div class="posts">
@@ -55,7 +42,7 @@
           <span class="ttl">
             <h3><a href="/">Новости</a></h3><br>
             <h4>{{ post.title }}</h4>
-            <p>{{ post.author }} {{ post.date }}</p>
+            <p>{{ post.author }} {{ post.date_posted }}</p>
           </span>
         </div>
         <div class="post">

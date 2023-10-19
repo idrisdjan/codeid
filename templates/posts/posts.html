@@ -30,7 +30,7 @@
             <a class="nav-item nav-link" href="{% url 'profile' %}">Профиль</a>
             <a class="nav-item nav-link" href="{% url 'logout' %}">Выход</a>
           {% else %}
-            <a class="nav-item nav-link" href="{% url 'login' %}">Вход</a>
+            <a class="nav-item nav-link" href="{% url 'login' %}">Вход |</a>
             <a class="nav-item nav-link" href="{% url 'register' %}">Регистрация</a>
           {% endif %}
         </ul>
@@ -58,7 +58,7 @@
       <h3>Актуальные новости</h3>
       {% for post in post_list %}
         <div class="item-post">
-          <p class="author">{{ post.author }}{{ post.date }}</p>
+          <p class="author">{{ post.author }} {{ post.date_posted }}</p>
           <h4><a href="{{ post.id }}">{{ post.title }}</a></h4>
           <div class="image">
             <a href="{{ post.id }}"><img class="prev" src="{{ post.img.url }}" width="700" /></a>
