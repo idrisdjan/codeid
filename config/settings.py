@@ -17,6 +17,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# AUTH_USER_MODEL = 'users.Profile'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 # Application definition
 
@@ -133,5 +136,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 # MEDIAFILES_DIRS = [BASE_DIR / "media"]
 
-LOGIN_REDIRECT_URL = 'home'
-LOGIN_URL = 'login'
+# LOGIN_REDIRECT_URL = 'home'
+# LOGIN_URL = 'login'

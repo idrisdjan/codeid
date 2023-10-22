@@ -1,0 +1,16 @@
+{% extends "posts/posts.html" %}
+{% load static %}
+{% block content %}
+  <h1>Вход</h1>
+  <hr>
+
+  {% if form.errors %}
+    <p>{{ form.errors.error }}</p>
+  {% endif %}
+
+  <form action="{% url 'login' %}" method="post">
+    {{ form }}
+    {% csrf_token %}
+    <button type="submit" class="btn btn-success">Вход</button>
+  </form>
+{% endblock content %}

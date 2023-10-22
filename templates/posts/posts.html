@@ -26,12 +26,12 @@
           </ul>
           <!-- <a href="{% url 'login' %}"><button class='btn'>Войти</button></a> -->
           {% if user.is_authenticated %}
-            <a class="nav-item nav-link" href="{% url 'post-create' %}">Новая запись</a>
-            <a class="nav-item nav-link" href="{% url 'profile' %}">Профиль</a>
+            <a class="nav-item nav-link" href="{% url 'post-create' %}">Новая запись </a>
+            <a class="nav-item nav-link" href="{% url 'profile' %}"> Профиль </a>
             <a class="nav-item nav-link" href="{% url 'logout' %}">Выход</a>
           {% else %}
-            <a class="nav-item nav-link" href="{% url 'login' %}">Вход |</a>
-            <a class="nav-item nav-link" href="{% url 'register' %}">Регистрация</a>
+            <a class="nav-item nav-link" href="{% url 'login' %}">Вход</a> |
+            <a class="nav-item nav-link" href="{% url 'register' %}"> Регистрация</a>
           {% endif %}
         </ul>
       </nav>
