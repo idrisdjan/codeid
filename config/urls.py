@@ -1,22 +1,31 @@
 from django.contrib import admin
-from django.contrib.auth import views as auth_views
 from django.urls import path, include
-from django.conf import settings
 from django.conf.urls.static import static
-from users import views as user_views
+from django.conf import settings
+from django.contrib.sitemaps.views import sitemap
+
+from modules.blog.sitemaps import StaticSitemap, ArticleSitemap
+from modules.blog.feeds import LatestArticlesFeed
+
+sitemaps = {
+    'static': StaticSitemap,
+    'articles': ArticleSitemap,
+}
+
+handler403 = 'modules.system.views.tr_handler403'
+handler404 = 'modules.system.views.tr_handler404'
+handler500 = 'modules.system.views.tr_handler500'
+
 
 urlpatterns = [
+    path('ckeditor5/', include('django_ckeditor_5.urls')),
     path('admin/', admin.site.urls),
-    path('', include('posts.urls'), name="home"),
-    path('register/', user_views.Register.as_view(), name='register'),
-    # path('profile/', user_views.profile, name='profile'),
-    path('login/', user_views.Login.as_view(), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    path('feeds/latest/', LatestArticlesFeed(), name='latest_articles_feed'),
+    path('', include('modules.blog.urls')),
+    path('', include('modules.system.urls')),
 ]
 
 if settings.DEBUG:
-    urlpatterns.extend(static("static/", document_root="static"))
-    urlpatterns.extend(static("media/", document_root="media"))
-    # urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    
-admin.site.site_header = 'Панель администрирования'
+    urlpatterns = [path('__debug__/', include('debug_toolbar.urls'))] + urlpatterns
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

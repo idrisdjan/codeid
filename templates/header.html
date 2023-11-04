@@ -1,0 +1,48 @@
+<header class="mt-3">
+  <div class="px-3 py-2 text-bg-dark" style="border-radius: 10px 10px 0 0;">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+          <img width="64" src="https://cdn-icons-png.flaticon.com/512/8277/8277654.png" />
+        </a>
+
+        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+          <li>
+            <a href="{% url 'home' %}" class="nav-link text-secondary">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                <use xlink:href="#home"></use>
+              </svg>
+              Главная
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'articles_create' %}" class="nav-link text-white">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                <use xlink:href="#speedometer2"></use>
+              </svg>
+              Добавить статью
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+  <div class="px-3 py-2 bg-light mb-3" style="border-radius: 0 0 10px 10px;">
+    <div class="container d-flex flex-wrap justify-content-center">
+      <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search" method="get" action="{% url 'search' %}">
+        <input type="search" class="form-control" placeholder="Поиск..." aria-label="Search" name='do' autocomplete="off"
+          id="search">
+      </form>
+      {% if request.user.is_authenticated %}
+      <a href="{% url 'profile_detail' request.user.profile.slug %}" type="button" class="btn btn-secondary me-2">{{ request.user.username }}</a>
+      <a href="{% url 'logout' %}" type="button" class="btn btn-primary">Деавторизация</a>
+      {% else %}
+      <div class="text-end">
+        <a href="{% url 'login' %}" type="button" class="btn btn-light text-dark me-2">Авторизация</a>
+        <a href="{% url 'register' %}" type="button" class="btn btn-primary">Регистрация</a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</header>

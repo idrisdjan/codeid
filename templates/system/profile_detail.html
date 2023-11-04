@@ -1,0 +1,85 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<div class="card border-0">
+	<div class="card-body">
+		<div class="row">
+			<div class="col-md-3">
+				<figure>
+					<img src="{{ profile.get_avatar }}" class="img-fluid rounded-0" alt="{{ profile }}" />
+				</figure>
+			</div>
+			<div class="col-md-9">
+				<h5 class="card-title">
+					{{ profile }}
+				</h5>
+				<div class="card-text">
+					<ul>
+						<li>Никнейм: {{ profile.user.username }}</li>
+						{% if profile.user.get_full_name %}
+						<li>Имя и фамилия: {{ profile.user.get_full_name }}</li>
+						{% endif %}
+						<li>Заходил: {{ profile.user.last_login }} | {% if profile.is_online %}Онлайн{% else %}Не в сети{% endif %}
+						</li>
+						<li>Дата рождения: {{ profile.birth_date }}</li>
+						<li>О себе: {{ profile.bio }}</li>
+					</ul>
+					{% if request.user.is_authenticated and request.user != profile.user %} {% if request.user.profile in profile.followers.all %}
+						<button class="btn btn-sm btn-danger btn-follow" data-slug="{{ profile.slug }}">
+							Отписаться от {{ profile.user.username }}
+						</button>
+					{% else %}
+						<button class="btn btn-sm btn-primary btn-follow" data-slug="{{ profile.slug }}">
+							Подписаться на {{ profile.user.username }}
+						</button>
+					{% endif %}
+					{% elif request.user == profile.user %}
+						<a href="{% url 'profile_edit' %}" class="btn btn-sm btn-primary">Редактировать профиль</a>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="card border-0">
+		<div class="card-body">
+			<div class="row">
+				<div class="col-md-6">
+					<h6 class="card-title">
+						Подписки
+					</h6>
+					<div class="card-text">
+						<div class="row">
+							{% for following in profile.following.all %}
+							<div class="col-md-2">
+								<a href="{{ following.get_absolute_url }}">
+									<img src="{{ following.get_avatar }}" class="img-fluid rounded-1" alt="{{ following }}" />
+								</a>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<h6 class="card-title">
+						Подписчики
+					</h6>
+					<div class="card-text">
+						<div class="row followers-box">
+							{% for follower in profile.followers.all %}
+							<div class="col-md-2" id="user-slug-{{ follower.slug }}">
+								<a href="{{ follower.get_absolute_url }}">
+									<img src="{{ follower.get_avatar }}" class="img-fluid rounded-1" alt="{{ follower }}" />
+								</a>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+{% block script %}
+<script src="{% static 'custom/js/profile.js' %}"></script>
+{% endblock %}

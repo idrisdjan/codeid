@@ -1,0 +1,38 @@
+{% load mptt_tags blog_tags %}
+<!-- <a href="{% url 'latest_articles_feed' %}">Подписаться на RSS ленту</a> -->
+<div class="card mb-2">
+  <div class="card-body">
+    <h5 class="card-title">Категории</h5>
+    {% full_tree_for_model blog.Category as categories %}
+    <div class="card-text">
+      <ul>
+        {% recursetree categories %}
+        <li>
+          <a href="{{ node.get_absolute_url }}">{{ node.title }}</a>
+        </li>
+        {% if not node.is_leaf_node %}
+        <ul>
+          {% endif %} {{children}} {% if not node.is_leaf_node %}
+        </ul>
+        {% endif %} {% endrecursetree %}
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="card mb-2">
+  <div class="card-body">
+    <h5 class="card-title">Популярные теги</h5>
+    <div class="card-text">
+      <ul>
+        {% popular_tags as tag_list %}
+        {% for tag in tag_list %}
+        <li><a href="{% url 'articles_by_tags' tag.slug %}">{{ tag.name }}</a> ({{ tag.num_times }})</li>
+        {% empty %}
+        <li>Популярных тегов не найдено.</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% show_latest_comments count=5 %}

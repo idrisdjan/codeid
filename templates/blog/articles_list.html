@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+{% for article in articles %}
+<div class="card mb-3">
+  <div class="row">
+    <div class="col-4">
+      <img src="{{ article.thumbnail.url }}" class="card-img-top" alt="{{ article.title }}">
+    </div>
+    <div class="col-8">
+      <div class="card-body">
+        <h5 class="card-title"><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h5>
+        <p class="card-text">{{ article.short_description|safe }}</p>
+        <hr>
+        Категория: <a href="{% url 'articles_by_category' article.category.slug %}">{{ article.category.title }}</a>
+        / Добавил: {{ article.author.username }}
+      </div>
+    </div>
+    <div class="rating-buttons">
+      <button class="btn btn-sm btn-primary" data-article="{{ article.id }}" data-value="1">Лайк</button>
+      <button class="btn btn-sm btn-secondary" data-article="{{ article.id }}" data-value="-1">Дизлайк</button>
+      <button class="btn btn-sm btn-secondary rating-sum">{{ article.get_sum_rating }}</button>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'custom/js/ratings.js' %}"></script>
+{% endblock%}

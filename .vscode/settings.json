@@ -1,20 +1,20 @@
 {
-	"[python]": {
-		"editor.defaultFormatter": "ms-python.python"
-	},
-	"python.formatting.provider": "none",
+	"python.analysis.typeCheckingMode": "basic",
+	"python.analysis.autoImportCompletions": false,
 	"cSpell.words": [
-		"Актуальные",
-		"Войти",
-		"Вход",
-		"Вывод",
-		"Главная",
-		"записей",
-		"Контакты",
-		"новости",
-		"сайта",
-		"Сервисы",
-		"Шапка",
-		"Codeid"
+		"Деавторизация",
+		"Кастомное",
+		"csrftoken",
+		"endrecursetree",
+		"exif",
+		"GOWA",
+		"Gyyk",
+		"mptt",
+		"pytils",
+		"recursetree",
+		"taggit",
+		"tfgipysvmjqxjvbi",
+		"translit",
+		"uidb"
 	]
 }

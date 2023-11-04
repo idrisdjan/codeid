@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- INCLUDE CSS -->
+  <link href="{% static 'bootstrap\css\bootstrap.min.css' %}" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    {% include 'header.html' %}
+    <div class="row">
+      <div class="col-8">
+        {% include 'includes/messages.html' %}
+        {% block content %}
+    
+        {% endblock %}
+      </div>
+      <div class="col-4">
+        {% block sidebar %}{% endblock %}
+        {% include 'sidebar.html' %}
+      </div>
+    </div>
+  </div>
+  <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'custom/js/backend.js' %}"></script>
+  {% block script %}{% endblock %}
+</body>
+
+</html>
