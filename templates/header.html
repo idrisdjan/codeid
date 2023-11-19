@@ -35,7 +35,7 @@
           id="search">
       </form>
       {% if request.user.is_authenticated %}
-      <a href="{% url 'profile_detail' request.user.profile.slug %}" type="button" class="btn btn-secondary me-2">{{ request.user.username }}</a>
+      <a href="{% url 'profile_detail' request.user.profile.pk %}" type="button" class="btn btn-secondary me-2">{{ request.user.username }}</a>
       <a href="{% url 'logout' %}" type="button" class="btn btn-primary">Деавторизация</a>
       {% else %}
       <div class="text-end">

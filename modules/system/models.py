@@ -44,6 +44,17 @@ class Profile(models.Model):
             self.slug = unique_slugify(self, self.user.username) # type: ignore
         super().save(*args, **kwargs)
     
+    # def save(self, *args, **kwargs):
+    #     if not self.pk:
+    #         try:
+    #             p = Profile.objects.get(user=self.user)
+    #             self.pk = p.pk
+    #         except Profile.DoesNotExist:
+    #             pass
+
+    #     super(Profile, self).save(*args, **kwargs)
+    
+    
     def __str__(self):
         """
         Возвращение строки
